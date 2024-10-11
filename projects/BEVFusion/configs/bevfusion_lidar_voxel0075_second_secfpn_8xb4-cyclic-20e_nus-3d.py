@@ -1,6 +1,5 @@
 _base_ = ['../../../configs/_base_/default_runtime.py']
-custom_imports = dict(
-    imports=['projects.BEVFusion.bevfusion'], allow_failed_imports=False)
+custom_imports = dict(imports=['projects.BEVFusion.bevfusion'], allow_failed_imports=False)
 
 # model settings
 # Voxel size for voxel encoder
@@ -267,8 +266,8 @@ test_pipeline = [
 ]
 
 train_dataloader = dict(
-    batch_size=4,
-    num_workers=4,
+    batch_size=8,
+    num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=True),
     dataset=dict(
@@ -288,7 +287,7 @@ train_dataloader = dict(
             box_type_3d='LiDAR')))
 val_dataloader = dict(
     batch_size=1,
-    num_workers=4,
+    num_workers=8,
     persistent_workers=True,
     drop_last=False,
     sampler=dict(type='DefaultSampler', shuffle=False),

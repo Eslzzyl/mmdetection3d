@@ -102,7 +102,7 @@ def create_nuscenes_infos(root_path,
         mmengine.dump(data, info_val_path)
 
 
-def get_available_scenes(nusc):
+def get_available_scenes(nusc: NuScenes):
     """Get available scenes from the input nuscenes class.
 
     Given the raw data, get the information of available scenes for
